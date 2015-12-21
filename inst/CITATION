@@ -1,0 +1,18 @@
+citHeader("To cite the surveyoutliers package in publications use the first reference below. The second reference is a paper describing some of the methods implemented in the package")
+
+citEntry(entry="misc",
+   author="Robert Graham Clark",
+   year=2015,
+   title="surveyoutliers: A package to help handle outliers in sample surveys.",
+   note="R package version 0.0",
+   textVersion="R. G. Clark (2015) \"surveyoutliers: A package to help handle outliers in sample surveys\". R package version 0.0." )
+
+citEntry(entry="article",
+  year=2016,
+  author=as.person("Robert G. Clark [aut], Philip Kokic [aut], Paul A. Smith [aut]"),
+  title = "A Comparison of two Robust Estimation Methods for Business Surveys",
+  journal="International Statistical Review",
+  note="forthcoming",
+  textVersion="Clark, R.G., Kokic, P. and Smith, P.A. (2016) A Comparison of two Robust Estimation Methods for Business Surveys. International Statistical Review, forthcoming"
+)
+   

@@ -1,0 +1,14 @@
+172356f490dfe72fa2ac183caa03a4eb *DESCRIPTION
+62f94fb88ce151d3771df22a248490c1 *NAMESPACE
+eab03eaaddd314543975a84ac545583b *R/data.R
+e54ba412dd92b8ed7d72eee1a2861dcf *R/optimal.onesided.cutoff.R
+a1d5b24d68e4a818f979ce738f6c3185 *R/optimal.onesided.cutoff.bygroup.R
+522f303d9df692ba936a11a42d2a7c73 *R/robust.lm.onesided.R
+6ff4aefefab48f0d3249d74e91637dd9 *R/surveyoutliers.R
+31410870aae7da469b3b8d4d375a5f2f *data/survdat.example.rdata
+19e1272aa1ca35bec873e0993da4acfa *inst/CITATION
+f4476a038b7500beb886537130121631 *inst/surveyoutliers.pdf
+192deba59f7f36954fb56940b88a71e4 *man/optimal.onesided.cutoff.Rd
+63a53580bbc304692f131496ca226c0f *man/optimal.onesided.cutoff.bygroup.Rd
+d1587e089cceb9d120cd8b44e2ad6bca *man/robust.lm.onesided.Rd
+cfce159098a13ae8fb9b01835afe51ae *man/survdat.example.Rd
