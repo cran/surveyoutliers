@@ -38,8 +38,9 @@ optimal.onesided.cutoff <- function(formula,surveydata,historical.reweight=1,est
   formula.items <- as.character(formula)
   y <- surveydata[,formula.items[2]]
   surveydata$y <- y
-  diff.fn <- function(Q,formula,surveydata,estimated.means,return.all=F,stop=F){
+  diff.fn <- function(Q,formula,surveydata,estimated.means.name,return.all=F,stop=F){
     if(stop) browser()
+    rlm.results <- NULL
     if(estimated.means.name==""){
       rlm.results <- robust.lm.onesided( formula=formula , Q=Q , data=surveydata ,maxit=500 )
       estimated.means <- rlm.results$fitted.values
@@ -53,9 +54,11 @@ optimal.onesided.cutoff <- function(formula,surveydata,historical.reweight=1,est
     if(return.all) out <- list( diff=Q+bias.est , rlm.results=rlm.results , lm.results=lm.results , Q=Q )
     out
   }
-  Q.opt <- uniroot( f=diff.fn , formula=formula , surveydata=surveydata , estimated.means=estimated.means ,
-                    interval=pmax(0.0001,range((y-median(y))*(surveydata$gregwt-1))) , return.all=F )$root
-  full.results <- diff.fn( Q=Q.opt , formula=formula , surveydata=surveydata , return.all=T )
+  Q.opt <- uniroot( f=diff.fn, formula=formula , surveydata=surveydata,
+                    estimated.means.name=estimated.means.name ,
+                    interval=pmax(0.0001,range((y-median(y))*(surveydata$gregwt-1))),
+                    return.all=FALSE)$root
+  full.results <- diff.fn( Q=Q.opt , formula=formula , surveydata=surveydata, estimated.means.name="", return.all=T )
   windata <- surveydata
   windata$cutoffs <- full.results$rlm.results$fitted.values + Q.opt / (surveydata$gregwt-1)
   windata$win1.values <- pmin(y,windata$cutoffs)
